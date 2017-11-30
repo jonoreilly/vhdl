@@ -1,5 +1,5 @@
 Assembler report for butonled
-Tue Nov 28 19:01:56 2017
+Wed Nov 29 23:04:03 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 28 19:01:56 2017 ;
+; Assembler Status      ; Successful - Wed Nov 29 23:04:03 2017 ;
 ; Revision Name         ; butonled                              ;
 ; Top-level Entity Name ; butonled                              ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                    ;
 +----------------+----------------------------------------------------------------------------+
 ; Device         ; EP2C5T144C8                                                                ;
-; JTAG usercode  ; 0x00072F82                                                                 ;
-; Checksum       ; 0x00072F82                                                                 ;
+; JTAG usercode  ; 0x000739C0                                                                 ;
+; Checksum       ; 0x000739C0                                                                 ;
 +----------------+----------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------------+
 ; Device             ; EPCS4                                                                  ;
 ; JTAG usercode      ; 0x00000000                                                             ;
-; Checksum           ; 0x075345FB                                                             ;
+; Checksum           ; 0x0753083D                                                             ;
 ; Compression Ratio  ; 3                                                                      ;
 +--------------------+------------------------------------------------------------------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Nov 28 19:01:54 2017
+    Info: Processing started: Wed Nov 29 23:04:01 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off butonled -c butonled
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 430 megabytes
-    Info: Processing ended: Tue Nov 28 19:01:56 2017
+    Info: Processing ended: Wed Nov 29 23:04:03 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
