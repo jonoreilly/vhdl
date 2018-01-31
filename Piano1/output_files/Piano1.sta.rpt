@@ -1,0 +1,1077 @@
+TimeQuest Timing Analyzer report for Piano1
+Tue Jan 30 20:47:35 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'i_clock'
+ 12. Slow Model Hold: 'i_clock'
+ 13. Slow Model Minimum Pulse Width: 'i_clock'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Propagation Delay
+ 17. Minimum Propagation Delay
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'i_clock'
+ 24. Fast Model Hold: 'i_clock'
+ 25. Fast Model Minimum Pulse Width: 'i_clock'
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Propagation Delay
+ 29. Minimum Propagation Delay
+ 30. Multicorner Timing Analysis Summary
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Progagation Delay
+ 34. Minimum Progagation Delay
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; Piano1                                             ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C5T144C8                                        ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; i_clock    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i_clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 210.93 MHz ; 210.93 MHz      ; i_clock    ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Slow Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; i_clock ; -3.741 ; -160.947      ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Slow Model Hold Summary         ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; i_clock ; 0.499 ; 0.000         ;
++---------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; i_clock ; -1.941 ; -99.885             ;
++---------+--------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'i_clock'                                                                                     ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+; -3.741 ; r_A_440HZ[0]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.778      ;
+; -3.455 ; r_B_494HZ[8]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 4.496      ;
+; -3.446 ; r_B_494HZ[0]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.486      ;
+; -3.434 ; r_A_440HZ[0]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 4.473      ;
+; -3.393 ; r_A_440HZ[1]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.433      ;
+; -3.356 ; r_C_523HZ[1]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.396      ;
+; -3.353 ; r_D_587HZ[1]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 4.391      ;
+; -3.337 ; r_B_494HZ[9]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.377      ;
+; -3.331 ; r_A_440HZ[0]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.368      ;
+; -3.317 ; r_A_440HZ[0]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.354      ;
+; -3.317 ; r_B_494HZ[11] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.357      ;
+; -3.297 ; r_B_494HZ[1]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.337      ;
+; -3.263 ; r_D_587HZ[2]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.303      ;
+; -3.234 ; r_A_440HZ[1]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.274      ;
+; -3.233 ; r_A_440HZ[0]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.270      ;
+; -3.217 ; r_C_523HZ[2]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.257      ;
+; -3.190 ; r_A_440HZ[4]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.230      ;
+; -3.177 ; r_A_440HZ[0]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 4.219      ;
+; -3.134 ; r_C_523HZ[3]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.174      ;
+; -3.104 ; r_C_523HZ[1]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.144      ;
+; -3.079 ; r_A_440HZ[0]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.116      ;
+; -3.062 ; r_A_440HZ[1]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.102      ;
+; -3.057 ; r_C_523HZ[4]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.097      ;
+; -3.056 ; r_A_440HZ[1]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.096      ;
+; -3.048 ; r_C_523HZ[1]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 4.090      ;
+; -3.048 ; r_A_440HZ[0]  ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.085      ;
+; -3.047 ; r_B_494HZ[3]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 4.088      ;
+; -3.046 ; r_D_587HZ[1]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.086      ;
+; -3.039 ; r_A_440HZ[5]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.079      ;
+; -3.035 ; r_A_440HZ[0]  ; r_D_587HZ[6]     ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.072      ;
+; -3.031 ; r_A_440HZ[4]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.071      ;
+; -3.023 ; r_A_440HZ[0]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 4.062      ;
+; -3.020 ; r_C_523HZ[1]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.060      ;
+; -3.019 ; r_B_494HZ[0]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 4.058      ;
+; -3.018 ; r_A_440HZ[0]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 4.060      ;
+; -3.017 ; r_B_494HZ[3]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.057      ;
+; -3.012 ; r_B_494HZ[0]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 4.051      ;
+; -3.010 ; r_B_494HZ[3]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.050      ;
+; -3.008 ; r_D_587HZ[2]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 4.046      ;
+; -3.006 ; r_D_587HZ[2]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 4.044      ;
+; -3.003 ; r_A_440HZ[6]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.043      ;
+; -2.995 ; r_A_440HZ[0]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 4.032      ;
+; -2.993 ; r_A_440HZ[2]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 4.035      ;
+; -2.993 ; r_D_587HZ[11] ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.033      ;
+; -2.981 ; r_D_587HZ[3]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.021      ;
+; -2.978 ; r_A_440HZ[1]  ; r_A_440HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.018      ;
+; -2.965 ; r_C_523HZ[2]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 4.005      ;
+; -2.958 ; r_A_440HZ[3]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 4.000      ;
+; -2.933 ; r_B_494HZ[2]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.973      ;
+; -2.933 ; r_B_494HZ[1]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.972      ;
+; -2.931 ; r_B_494HZ[4]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.971      ;
+; -2.930 ; r_D_587HZ[2]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 3.968      ;
+; -2.929 ; r_D_587HZ[1]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 3.967      ;
+; -2.926 ; r_B_494HZ[1]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.965      ;
+; -2.924 ; r_B_494HZ[4]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.964      ;
+; -2.910 ; r_C_523HZ[10] ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.950      ;
+; -2.909 ; r_C_523HZ[2]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.951      ;
+; -2.905 ; r_A_440HZ[3]  ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 3.942      ;
+; -2.896 ; r_B_494HZ[5]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.936      ;
+; -2.890 ; r_D_587HZ[3]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 3.928      ;
+; -2.889 ; r_B_494HZ[5]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.929      ;
+; -2.886 ; r_B_494HZ[15] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 3.927      ;
+; -2.883 ; r_B_494HZ[13] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.923      ;
+; -2.882 ; r_C_523HZ[3]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.922      ;
+; -2.881 ; r_C_523HZ[2]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.921      ;
+; -2.880 ; r_A_440HZ[5]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.920      ;
+; -2.859 ; r_A_440HZ[4]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.899      ;
+; -2.857 ; r_B_494HZ[10] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 3.898      ;
+; -2.853 ; r_A_440HZ[4]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.893      ;
+; -2.850 ; r_C_523HZ[1]  ; r_C_523HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.890      ;
+; -2.846 ; r_A_440HZ[0]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.888      ;
+; -2.845 ; r_D_587HZ[1]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 3.883      ;
+; -2.844 ; r_A_440HZ[6]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.884      ;
+; -2.840 ; r_A_440HZ[0]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.882      ;
+; -2.839 ; r_D_587HZ[6]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.879      ;
+; -2.835 ; r_B_494HZ[2]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.874      ;
+; -2.834 ; r_A_440HZ[2]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.876      ;
+; -2.830 ; r_B_494HZ[14] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 3.871      ;
+; -2.828 ; r_B_494HZ[2]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.867      ;
+; -2.826 ; r_C_523HZ[3]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.868      ;
+; -2.825 ; r_A_440HZ[0]  ; r_C_523HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.003     ; 3.862      ;
+; -2.807 ; r_A_440HZ[15] ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; -0.005     ; 3.842      ;
+; -2.805 ; r_C_523HZ[4]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.845      ;
+; -2.802 ; r_C_523HZ[6]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.842      ;
+; -2.800 ; r_A_440HZ[7]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.840      ;
+; -2.799 ; r_A_440HZ[3]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.841      ;
+; -2.799 ; r_A_440HZ[14] ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; -0.005     ; 3.834      ;
+; -2.798 ; r_C_523HZ[3]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.838      ;
+; -2.797 ; r_A_440HZ[12] ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; -0.005     ; 3.832      ;
+; -2.782 ; r_A_440HZ[0]  ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.821      ;
+; -2.775 ; r_A_440HZ[4]  ; r_A_440HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.815      ;
+; -2.764 ; r_C_523HZ[7]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.804      ;
+; -2.762 ; r_A_440HZ[0]  ; r_A_440HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.804      ;
+; -2.759 ; r_D_587HZ[4]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 3.797      ;
+; -2.756 ; r_B_494HZ[8]  ; r_B_494HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.796      ;
+; -2.756 ; r_B_494HZ[8]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.796      ;
+; -2.755 ; r_B_494HZ[8]  ; r_B_494HZ[3]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.795      ;
+; -2.751 ; r_B_494HZ[8]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 3.791      ;
+; -2.749 ; r_C_523HZ[4]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.002      ; 3.791      ;
+; -2.747 ; r_B_494HZ[0]  ; r_B_494HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 3.786      ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'i_clock'                                                                                        ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; r_TOGGLE_B_494HZ ; r_TOGGLE_B_494HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; r_TOGGLE_C_523HZ ; r_TOGGLE_C_523HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; r_TOGGLE_A_440HZ ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; r_TOGGLE_D_587HZ ; r_TOGGLE_D_587HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.805      ;
+; 1.163 ; r_B_494HZ[2]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.469      ;
+; 1.163 ; r_A_440HZ[2]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.469      ;
+; 1.163 ; r_A_440HZ[9]     ; r_A_440HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.469      ;
+; 1.163 ; r_D_587HZ[11]    ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.469      ;
+; 1.164 ; r_A_440HZ[13]    ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.470      ;
+; 1.172 ; r_B_494HZ[13]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.478      ;
+; 1.172 ; r_C_523HZ[14]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.478      ;
+; 1.172 ; r_D_587HZ[14]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.478      ;
+; 1.175 ; r_B_494HZ[1]     ; r_B_494HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.481      ;
+; 1.176 ; r_B_494HZ[9]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.482      ;
+; 1.176 ; r_A_440HZ[0]     ; r_A_440HZ[0]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.482      ;
+; 1.176 ; r_D_587HZ[2]     ; r_D_587HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.482      ;
+; 1.177 ; r_B_494HZ[11]    ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; r_D_587HZ[4]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; r_D_587HZ[7]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.483      ;
+; 1.213 ; r_B_494HZ[6]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.519      ;
+; 1.213 ; r_B_494HZ[12]    ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.519      ;
+; 1.213 ; r_A_440HZ[3]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.519      ;
+; 1.220 ; r_C_523HZ[8]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.526      ;
+; 1.220 ; r_D_587HZ[8]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.526      ;
+; 1.221 ; r_C_523HZ[5]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.221 ; r_C_523HZ[6]     ; r_C_523HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.221 ; r_C_523HZ[10]    ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.221 ; r_D_587HZ[3]     ; r_D_587HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.221 ; r_D_587HZ[5]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.221 ; r_D_587HZ[12]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.527      ;
+; 1.317 ; r_C_523HZ[15]    ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.623      ;
+; 1.317 ; r_D_587HZ[15]    ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.623      ;
+; 1.515 ; r_D_587HZ[1]     ; r_D_587HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.821      ;
+; 1.642 ; r_A_440HZ[2]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.948      ;
+; 1.642 ; r_D_587HZ[11]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.948      ;
+; 1.654 ; r_B_494HZ[1]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.960      ;
+; 1.654 ; r_B_494HZ[0]     ; r_B_494HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.960      ;
+; 1.655 ; r_D_587HZ[2]     ; r_D_587HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.961      ;
+; 1.656 ; r_B_494HZ[11]    ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.962      ;
+; 1.656 ; r_D_587HZ[4]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.962      ;
+; 1.693 ; r_B_494HZ[12]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 1.999      ;
+; 1.701 ; r_D_587HZ[3]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.007      ;
+; 1.701 ; r_C_523HZ[5]     ; r_C_523HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.007      ;
+; 1.740 ; r_A_440HZ[0]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.046      ;
+; 1.740 ; r_B_494HZ[0]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.046      ;
+; 1.741 ; r_B_494HZ[9]     ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.047      ;
+; 1.741 ; r_D_587HZ[2]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.047      ;
+; 1.742 ; r_B_494HZ[11]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.048      ;
+; 1.766 ; r_D_587HZ[7]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.072      ;
+; 1.786 ; r_C_523HZ[8]     ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.092      ;
+; 1.787 ; r_D_587HZ[12]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.093      ;
+; 1.787 ; r_D_587HZ[5]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.093      ;
+; 1.787 ; r_D_587HZ[3]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.093      ;
+; 1.814 ; r_D_587HZ[11]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.120      ;
+; 1.826 ; r_A_440HZ[0]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.132      ;
+; 1.827 ; r_B_494HZ[9]     ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.133      ;
+; 1.827 ; r_D_587HZ[2]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.133      ;
+; 1.828 ; r_D_587HZ[4]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.134      ;
+; 1.835 ; r_B_494HZ[15]    ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.141      ;
+; 1.872 ; r_D_587HZ[8]     ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.178      ;
+; 1.875 ; r_A_440HZ[8]     ; r_A_440HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; -0.002     ; 2.179      ;
+; 1.891 ; r_C_523HZ[6]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.197      ;
+; 1.900 ; r_A_440HZ[9]     ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.206      ;
+; 1.900 ; r_B_494HZ[2]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.206      ;
+; 1.902 ; r_A_440HZ[0]     ; r_D_587HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 2.207      ;
+; 1.908 ; r_D_587HZ[6]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.216      ;
+; 1.909 ; r_C_523HZ[9]     ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.217      ;
+; 1.913 ; r_B_494HZ[9]     ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.219      ;
+; 1.939 ; r_D_587HZ[10]    ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.247      ;
+; 1.947 ; r_B_494HZ[10]    ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 2.254      ;
+; 1.951 ; r_C_523HZ[13]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.259      ;
+; 1.952 ; r_D_587HZ[13]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.260      ;
+; 1.953 ; r_C_523HZ[4]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.261      ;
+; 1.955 ; r_A_440HZ[12]    ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; -0.002     ; 2.259      ;
+; 1.956 ; r_A_440HZ[1]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; -0.002     ; 2.260      ;
+; 1.958 ; r_D_587HZ[8]     ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.264      ;
+; 1.959 ; r_D_587HZ[3]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.265      ;
+; 1.959 ; r_C_523HZ[10]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.265      ;
+; 1.961 ; r_B_494HZ[5]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 2.268      ;
+; 1.962 ; r_B_494HZ[8]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 2.269      ;
+; 1.969 ; r_B_494HZ[6]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.275      ;
+; 1.977 ; r_D_587HZ[5]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.283      ;
+; 1.977 ; r_C_523HZ[5]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.283      ;
+; 1.992 ; r_D_587HZ[1]     ; r_D_587HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.298      ;
+; 1.996 ; r_B_494HZ[4]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 2.303      ;
+; 1.998 ; r_B_494HZ[1]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.304      ;
+; 1.999 ; r_D_587HZ[2]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.305      ;
+; 2.003 ; r_B_494HZ[7]     ; r_B_494HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.309      ;
+; 2.003 ; r_B_494HZ[7]     ; r_B_494HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.309      ;
+; 2.005 ; r_B_494HZ[7]     ; r_B_494HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.311      ;
+; 2.007 ; r_B_494HZ[7]     ; r_B_494HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.313      ;
+; 2.010 ; r_A_440HZ[15]    ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.316      ;
+; 2.015 ; r_B_494HZ[7]     ; r_TOGGLE_B_494HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.321      ;
+; 2.018 ; r_D_587HZ[4]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.324      ;
+; 2.022 ; r_C_523HZ[7]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.330      ;
+; 2.024 ; r_D_587HZ[7]     ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.330      ;
+; 2.025 ; r_D_587HZ[10]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.333      ;
+; 2.025 ; r_C_523HZ[12]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.333      ;
+; 2.030 ; r_C_523HZ[3]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.002      ; 2.338      ;
+; 2.031 ; r_A_440HZ[8]     ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 2.337      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'i_clock'                                                        ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; i_clock ; Rise       ; i_clock       ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_D_587HZ[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; i_clock ; Rise       ; r_D_587HZ[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[12] ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; o_led_drive ; i_clock    ; 12.196 ; 12.196 ; Rise       ; i_clock         ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; o_led_drive ; i_clock    ; 9.897 ; 9.897 ; Rise       ; i_clock         ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; i_enable   ; o_led_drive ; 12.431 ;        ;        ; 12.431 ;
+; i_switch_1 ; o_led_drive ; 15.229 ; 15.229 ; 15.229 ; 15.229 ;
+; i_switch_2 ; o_led_drive ; 15.475 ; 15.475 ; 15.475 ; 15.475 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; i_enable   ; o_led_drive ; 12.431 ;        ;        ; 12.431 ;
+; i_switch_1 ; o_led_drive ; 15.229 ; 15.229 ; 15.229 ; 15.229 ;
+; i_switch_2 ; o_led_drive ; 14.057 ; 14.057 ; 14.057 ; 14.057 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------+
+; Fast Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; i_clock ; -0.606 ; -12.536       ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; i_clock ; 0.215 ; 0.000         ;
++---------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; i_clock ; -1.380 ; -67.380             ;
++---------+--------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'i_clock'                                                                                     ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.606 ; r_A_440HZ[0]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.638      ;
+; -0.523 ; r_A_440HZ[1]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.555      ;
+; -0.515 ; r_A_440HZ[0]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.548      ;
+; -0.478 ; r_D_587HZ[1]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.509      ;
+; -0.475 ; r_C_523HZ[1]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.507      ;
+; -0.475 ; r_A_440HZ[0]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 1.505      ;
+; -0.473 ; r_A_440HZ[0]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.506      ;
+; -0.433 ; r_A_440HZ[4]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.465      ;
+; -0.428 ; r_A_440HZ[1]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.460      ;
+; -0.427 ; r_C_523HZ[2]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.459      ;
+; -0.425 ; r_A_440HZ[0]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.457      ;
+; -0.409 ; r_B_494HZ[8]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.441      ;
+; -0.409 ; r_B_494HZ[0]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.441      ;
+; -0.406 ; r_B_494HZ[0]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.438      ;
+; -0.402 ; r_B_494HZ[9]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.434      ;
+; -0.401 ; r_A_440HZ[2]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.434      ;
+; -0.398 ; r_B_494HZ[1]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.430      ;
+; -0.393 ; r_C_523HZ[3]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.425      ;
+; -0.392 ; r_A_440HZ[0]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.424      ;
+; -0.387 ; r_D_587HZ[1]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.419      ;
+; -0.384 ; r_C_523HZ[1]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.417      ;
+; -0.384 ; r_A_440HZ[0]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.415      ;
+; -0.379 ; r_A_440HZ[3]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.412      ;
+; -0.379 ; r_B_494HZ[3]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.411      ;
+; -0.378 ; r_B_494HZ[0]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.410      ;
+; -0.378 ; r_A_440HZ[5]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.410      ;
+; -0.378 ; r_A_440HZ[0]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.411      ;
+; -0.369 ; r_B_494HZ[11] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.401      ;
+; -0.369 ; r_B_494HZ[1]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.401      ;
+; -0.365 ; r_C_523HZ[1]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.397      ;
+; -0.365 ; r_A_440HZ[0]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 1.395      ;
+; -0.364 ; r_A_440HZ[1]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.396      ;
+; -0.363 ; r_C_523HZ[4]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.395      ;
+; -0.358 ; r_A_440HZ[1]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.390      ;
+; -0.357 ; r_A_440HZ[6]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.389      ;
+; -0.352 ; r_D_587HZ[2]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.383      ;
+; -0.351 ; r_B_494HZ[3]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.383      ;
+; -0.345 ; r_B_494HZ[4]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.377      ;
+; -0.342 ; r_D_587HZ[2]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.374      ;
+; -0.341 ; r_B_494HZ[1]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.373      ;
+; -0.338 ; r_A_440HZ[4]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.370      ;
+; -0.336 ; r_C_523HZ[2]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.369      ;
+; -0.333 ; r_C_523HZ[1]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.365      ;
+; -0.333 ; r_A_440HZ[0]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 1.363      ;
+; -0.331 ; r_B_494HZ[2]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.363      ;
+; -0.328 ; r_D_587HZ[3]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.359      ;
+; -0.325 ; r_A_440HZ[1]  ; r_A_440HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.357      ;
+; -0.317 ; r_B_494HZ[4]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.349      ;
+; -0.317 ; r_C_523HZ[2]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.349      ;
+; -0.316 ; r_A_440HZ[0]  ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.349      ;
+; -0.316 ; r_B_494HZ[5]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.348      ;
+; -0.314 ; r_A_440HZ[0]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.347      ;
+; -0.308 ; r_A_440HZ[0]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.341      ;
+; -0.306 ; r_A_440HZ[2]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.339      ;
+; -0.303 ; r_B_494HZ[2]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.335      ;
+; -0.302 ; r_A_440HZ[0]  ; r_D_587HZ[6]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.334      ;
+; -0.302 ; r_B_494HZ[3]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.334      ;
+; -0.302 ; r_C_523HZ[3]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.335      ;
+; -0.299 ; r_A_440HZ[7]  ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.331      ;
+; -0.297 ; r_D_587HZ[1]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.328      ;
+; -0.290 ; r_D_587HZ[6]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.322      ;
+; -0.288 ; r_B_494HZ[5]  ; r_B_494HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.320      ;
+; -0.285 ; r_D_587HZ[2]  ; r_D_587HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.316      ;
+; -0.285 ; r_C_523HZ[2]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.317      ;
+; -0.284 ; r_A_440HZ[3]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.317      ;
+; -0.283 ; r_D_587HZ[4]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.314      ;
+; -0.283 ; r_A_440HZ[5]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.315      ;
+; -0.283 ; r_D_587HZ[2]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.314      ;
+; -0.283 ; r_C_523HZ[3]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.315      ;
+; -0.275 ; r_C_523HZ[10] ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.307      ;
+; -0.275 ; r_A_440HZ[0]  ; r_A_440HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.308      ;
+; -0.274 ; r_A_440HZ[4]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.306      ;
+; -0.272 ; r_C_523HZ[4]  ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.305      ;
+; -0.270 ; r_B_494HZ[10] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.302      ;
+; -0.268 ; r_A_440HZ[4]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.300      ;
+; -0.267 ; r_B_494HZ[15] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.299      ;
+; -0.264 ; r_D_587HZ[1]  ; r_D_587HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.295      ;
+; -0.263 ; r_C_523HZ[1]  ; r_C_523HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.295      ;
+; -0.263 ; r_D_587HZ[3]  ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.295      ;
+; -0.263 ; r_A_440HZ[0]  ; r_C_523HZ[9]     ; i_clock      ; i_clock     ; 1.000        ; -0.002     ; 1.293      ;
+; -0.262 ; r_A_440HZ[6]  ; r_A_440HZ[14]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.294      ;
+; -0.262 ; r_B_494HZ[2]  ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.294      ;
+; -0.261 ; r_B_494HZ[13] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.293      ;
+; -0.258 ; r_D_587HZ[5]  ; r_D_587HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.289      ;
+; -0.258 ; r_C_523HZ[5]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.289      ;
+; -0.258 ; r_D_587HZ[11] ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.290      ;
+; -0.255 ; r_A_440HZ[0]  ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.287      ;
+; -0.253 ; r_C_523HZ[4]  ; r_C_523HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.285      ;
+; -0.251 ; r_C_523HZ[3]  ; r_C_523HZ[11]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.283      ;
+; -0.250 ; r_C_523HZ[7]  ; r_C_523HZ[13]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.282      ;
+; -0.249 ; r_B_494HZ[14] ; r_B_494HZ[0]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.281      ;
+; -0.248 ; r_B_494HZ[0]  ; r_B_494HZ[8]     ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.280      ;
+; -0.246 ; r_A_440HZ[0]  ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.279      ;
+; -0.244 ; r_B_494HZ[0]  ; r_B_494HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.276      ;
+; -0.242 ; r_B_494HZ[7]  ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.274      ;
+; -0.242 ; r_A_440HZ[2]  ; r_A_440HZ[10]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.275      ;
+; -0.238 ; r_A_440HZ[3]  ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 1.000        ; 0.000      ; 1.270      ;
+; -0.236 ; r_C_523HZ[10] ; r_C_523HZ[2]     ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.267      ;
+; -0.236 ; r_C_523HZ[10] ; r_C_523HZ[3]     ; i_clock      ; i_clock     ; 1.000        ; -0.001     ; 1.267      ;
+; -0.236 ; r_A_440HZ[2]  ; r_A_440HZ[12]    ; i_clock      ; i_clock     ; 1.000        ; 0.001      ; 1.269      ;
++--------+---------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'i_clock'                                                                                        ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; r_TOGGLE_B_494HZ ; r_TOGGLE_B_494HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; r_TOGGLE_C_523HZ ; r_TOGGLE_C_523HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; r_TOGGLE_A_440HZ ; r_TOGGLE_A_440HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; r_TOGGLE_D_587HZ ; r_TOGGLE_D_587HZ ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.356 ; r_B_494HZ[2]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; r_A_440HZ[2]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; r_A_440HZ[9]     ; r_A_440HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; r_D_587HZ[11]    ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; r_A_440HZ[13]    ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; r_B_494HZ[13]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; r_A_440HZ[0]     ; r_A_440HZ[0]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; r_C_523HZ[14]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; r_D_587HZ[14]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; r_B_494HZ[1]     ; r_B_494HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; r_B_494HZ[9]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; r_B_494HZ[11]    ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; r_D_587HZ[2]     ; r_D_587HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; r_D_587HZ[4]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; r_D_587HZ[7]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.367 ; r_B_494HZ[6]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; r_B_494HZ[12]    ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; r_A_440HZ[3]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; r_D_587HZ[8]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; r_C_523HZ[5]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_C_523HZ[6]     ; r_C_523HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_C_523HZ[8]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_C_523HZ[10]    ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_D_587HZ[3]     ; r_D_587HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_D_587HZ[5]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; r_D_587HZ[12]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.521      ;
+; 0.407 ; r_C_523HZ[15]    ; r_C_523HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.559      ;
+; 0.407 ; r_D_587HZ[15]    ; r_D_587HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.559      ;
+; 0.449 ; r_D_587HZ[1]     ; r_D_587HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.601      ;
+; 0.494 ; r_A_440HZ[2]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; r_D_587HZ[11]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.646      ;
+; 0.497 ; r_B_494HZ[1]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; r_B_494HZ[11]    ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; r_D_587HZ[2]     ; r_D_587HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; r_B_494HZ[0]     ; r_B_494HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; r_D_587HZ[4]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.507 ; r_B_494HZ[12]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.659      ;
+; 0.509 ; r_D_587HZ[3]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; r_C_523HZ[5]     ; r_C_523HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.661      ;
+; 0.531 ; r_A_440HZ[0]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.683      ;
+; 0.533 ; r_B_494HZ[9]     ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; r_B_494HZ[11]    ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; r_D_587HZ[2]     ; r_D_587HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; r_B_494HZ[0]     ; r_B_494HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.686      ;
+; 0.544 ; r_D_587HZ[12]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; r_D_587HZ[5]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; r_C_523HZ[8]     ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; r_D_587HZ[3]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.696      ;
+; 0.554 ; r_D_587HZ[7]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.706      ;
+; 0.558 ; r_B_494HZ[15]    ; r_B_494HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.710      ;
+; 0.564 ; r_D_587HZ[11]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.716      ;
+; 0.566 ; r_A_440HZ[0]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.718      ;
+; 0.568 ; r_B_494HZ[9]     ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.720      ;
+; 0.568 ; r_D_587HZ[2]     ; r_D_587HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.720      ;
+; 0.569 ; r_D_587HZ[4]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.721      ;
+; 0.572 ; r_D_587HZ[10]    ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.725      ;
+; 0.573 ; r_A_440HZ[8]     ; r_A_440HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 0.724      ;
+; 0.576 ; r_D_587HZ[6]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.729      ;
+; 0.577 ; r_B_494HZ[10]    ; r_B_494HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.729      ;
+; 0.577 ; r_C_523HZ[9]     ; r_C_523HZ[10]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.730      ;
+; 0.578 ; r_C_523HZ[13]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.731      ;
+; 0.578 ; r_D_587HZ[13]    ; r_D_587HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.731      ;
+; 0.578 ; r_D_587HZ[8]     ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.730      ;
+; 0.579 ; r_C_523HZ[4]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.732      ;
+; 0.581 ; r_A_440HZ[1]     ; r_A_440HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 0.732      ;
+; 0.582 ; r_A_440HZ[12]    ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 0.733      ;
+; 0.582 ; r_A_440HZ[0]     ; r_D_587HZ[1]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.735      ;
+; 0.583 ; r_B_494HZ[8]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.735      ;
+; 0.584 ; r_B_494HZ[5]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.736      ;
+; 0.589 ; r_D_587HZ[1]     ; r_D_587HZ[2]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.741      ;
+; 0.599 ; r_A_440HZ[9]     ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.751      ;
+; 0.599 ; r_B_494HZ[2]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.751      ;
+; 0.603 ; r_C_523HZ[6]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.755      ;
+; 0.603 ; r_B_494HZ[9]     ; r_B_494HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.755      ;
+; 0.607 ; r_D_587HZ[10]    ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.760      ;
+; 0.607 ; r_C_523HZ[12]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.760      ;
+; 0.609 ; r_C_523HZ[3]     ; r_C_523HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.762      ;
+; 0.612 ; r_B_494HZ[10]    ; r_B_494HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.764      ;
+; 0.613 ; r_D_587HZ[9]     ; r_D_587HZ[11]    ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.766      ;
+; 0.613 ; r_B_494HZ[4]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.765      ;
+; 0.613 ; r_D_587HZ[8]     ; r_D_587HZ[12]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.765      ;
+; 0.614 ; r_C_523HZ[4]     ; r_C_523HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.767      ;
+; 0.614 ; r_D_587HZ[3]     ; r_D_587HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; r_C_523HZ[10]    ; r_C_523HZ[14]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.766      ;
+; 0.616 ; r_A_440HZ[1]     ; r_A_440HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 0.767      ;
+; 0.624 ; r_D_587HZ[1]     ; r_D_587HZ[3]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.776      ;
+; 0.630 ; r_B_494HZ[7]     ; r_B_494HZ[5]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.782      ;
+; 0.630 ; r_C_523HZ[7]     ; r_C_523HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.001      ; 0.783      ;
+; 0.631 ; r_B_494HZ[7]     ; r_B_494HZ[7]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.783      ;
+; 0.633 ; r_B_494HZ[7]     ; r_B_494HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.785      ;
+; 0.635 ; r_B_494HZ[7]     ; r_B_494HZ[4]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.787      ;
+; 0.636 ; r_B_494HZ[6]     ; r_B_494HZ[9]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.788      ;
+; 0.636 ; r_A_440HZ[11]    ; r_A_440HZ[13]    ; i_clock      ; i_clock     ; 0.000        ; -0.001     ; 0.787      ;
+; 0.637 ; r_B_494HZ[1]     ; r_B_494HZ[6]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.789      ;
+; 0.638 ; r_A_440HZ[15]    ; r_A_440HZ[15]    ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.790      ;
+; 0.638 ; r_D_587HZ[5]     ; r_D_587HZ[8]     ; i_clock      ; i_clock     ; 0.000        ; 0.000      ; 0.790      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'i_clock'                                                        ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; i_clock ; Rise       ; i_clock       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_A_440HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_A_440HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_B_494HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_B_494HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_C_523HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_C_523HZ[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_D_587HZ[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clock ; Rise       ; r_D_587HZ[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clock ; Rise       ; r_D_587HZ[12] ;
++--------+--------------+----------------+------------------+---------+------------+---------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; o_led_drive ; i_clock    ; 4.841 ; 4.841 ; Rise       ; i_clock         ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; o_led_drive ; i_clock    ; 4.160 ; 4.160 ; Rise       ; i_clock         ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; i_enable   ; o_led_drive ; 5.645 ;       ;       ; 5.645 ;
+; i_switch_1 ; o_led_drive ; 6.482 ; 6.482 ; 6.482 ; 6.482 ;
+; i_switch_2 ; o_led_drive ; 6.591 ; 6.591 ; 6.591 ; 6.591 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; i_enable   ; o_led_drive ; 5.645 ;       ;       ; 5.645 ;
+; i_switch_1 ; o_led_drive ; 6.482 ; 6.482 ; 6.482 ; 6.482 ;
+; i_switch_2 ; o_led_drive ; 6.188 ; 6.188 ; 6.188 ; 6.188 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.741   ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+;  i_clock         ; -3.741   ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+; Design-wide TNS  ; -160.947 ; 0.0   ; 0.0      ; 0.0     ; -99.885             ;
+;  i_clock         ; -160.947 ; 0.000 ; N/A      ; N/A     ; -99.885             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; o_led_drive ; i_clock    ; 12.196 ; 12.196 ; Rise       ; i_clock         ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; o_led_drive ; i_clock    ; 4.160 ; 4.160 ; Rise       ; i_clock         ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; i_enable   ; o_led_drive ; 12.431 ;        ;        ; 12.431 ;
+; i_switch_1 ; o_led_drive ; 15.229 ; 15.229 ; 15.229 ; 15.229 ;
+; i_switch_2 ; o_led_drive ; 15.475 ; 15.475 ; 15.475 ; 15.475 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; i_enable   ; o_led_drive ; 5.645 ;       ;       ; 5.645 ;
+; i_switch_1 ; o_led_drive ; 6.482 ; 6.482 ; 6.482 ; 6.482 ;
+; i_switch_2 ; o_led_drive ; 6.188 ; 6.188 ; 6.188 ; 6.188 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_clock    ; i_clock  ; 1170     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_clock    ; i_clock  ; 1170     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 7     ; 7    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Tue Jan 30 20:47:31 2018
+Info: Command: quartus_sta Piano1 -c Piano1
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Piano1.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name i_clock i_clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.741
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.741      -160.947 i_clock 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 i_clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941       -99.885 i_clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.606
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.606       -12.536 i_clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 i_clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -67.380 i_clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 455 megabytes
+    Info: Processing ended: Tue Jan 30 20:47:35 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

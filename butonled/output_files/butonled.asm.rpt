@@ -1,5 +1,5 @@
 Assembler report for butonled
-Wed Nov 29 23:04:03 2017
+Tue Jan 30 19:42:04 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.sof
-  6. Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.pof
+  5. Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.sof
+  6. Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Nov 29 23:04:03 2017 ;
+; Assembler Status      ; Successful - Tue Jan 30 19:42:04 2018 ;
 ; Revision Name         ; butonled                              ;
 ; Top-level Entity Name ; butonled                              ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------------------------------------+
-; Assembler Generated Files                                         ;
-+-------------------------------------------------------------------+
-; File Name                                                         ;
-+-------------------------------------------------------------------+
-; C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.sof ;
-; C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.pof ;
-+-------------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Assembler Generated Files                                                  ;
++----------------------------------------------------------------------------+
+; File Name                                                                  ;
++----------------------------------------------------------------------------+
+; C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.sof ;
+; C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.pof ;
++----------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.sof ;
-+----------------+----------------------------------------------------------------------------+
-; Option         ; Setting                                                                    ;
-+----------------+----------------------------------------------------------------------------+
-; Device         ; EP2C5T144C8                                                                ;
-; JTAG usercode  ; 0x000739C0                                                                 ;
-; Checksum       ; 0x000739C0                                                                 ;
-+----------------+----------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.sof ;
++----------------+-------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                             ;
++----------------+-------------------------------------------------------------------------------------+
+; Device         ; EP2C5T144C8                                                                         ;
+; JTAG usercode  ; 0x000739C0                                                                          ;
+; Checksum       ; 0x000739C0                                                                          ;
++----------------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/output_files/butonled.pof ;
-+--------------------+------------------------------------------------------------------------+
-; Option             ; Setting                                                                ;
-+--------------------+------------------------------------------------------------------------+
-; Device             ; EPCS4                                                                  ;
-; JTAG usercode      ; 0x00000000                                                             ;
-; Checksum           ; 0x0753083D                                                             ;
-; Compression Ratio  ; 3                                                                      ;
-+--------------------+------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/jonoreilly/Desktop/github/vhdl/butonled/output_files/butonled.pof ;
++--------------------+---------------------------------------------------------------------------------+
+; Option             ; Setting                                                                         ;
++--------------------+---------------------------------------------------------------------------------+
+; Device             ; EPCS4                                                                           ;
+; JTAG usercode      ; 0x00000000                                                                      ;
+; Checksum           ; 0x0753083D                                                                      ;
+; Compression Ratio  ; 3                                                                               ;
++--------------------+---------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Nov 29 23:04:01 2017
+    Info: Processing started: Tue Jan 30 19:42:01 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off butonled -c butonled
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 430 megabytes
-    Info: Processing ended: Wed Nov 29 23:04:03 2017
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 461 megabytes
+    Info: Processing ended: Tue Jan 30 19:42:04 2018
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
