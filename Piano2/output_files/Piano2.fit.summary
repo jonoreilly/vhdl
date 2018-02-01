@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Feb 01 18:42:07 2018
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Revision Name : Piano2
+Top-level Entity Name : Piano2
+Family : Cyclone II
+Device : EP2C5T144C8
+Timing Models : Final
+Total logic elements : 324 / 4,608 ( 7 % )
+    Total combinational functions : 324 / 4,608 ( 7 % )
+    Dedicated logic registers : 191 / 4,608 ( 4 % )
+Total registers : 191
+Total pins : 14 / 89 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

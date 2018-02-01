@@ -18,22 +18,22 @@ architecture rtl of Piano1_main is
   -- Formula is: (25 MHz / 100 Hz * 50% duty cycle)
   -- So for 100 Hz: 50,000,000 / 440 * 0.5 = 56818
   constant c_A_440HZ : natural := 56818;
-  constant c_B_494HZ  : natural := 50617;
-  constant c_C_523HZ  : natural := 47774;
-  constant c_D_587HZ   : natural := 42560;
+  constant c_B_494HZ : natural := 50617;
+  constant c_C_523HZ : natural := 47774;
+  constant c_D_587HZ : natural := 42560;
  
  
   -- These signals will be the counters:
   signal r_A_440HZ : natural range 0 to c_A_440HZ;
-  signal r_B_494HZ  : natural range 0 to c_B_494HZ;
-  signal r_C_523HZ  : natural range 0 to c_C_523HZ;
-  signal r_D_587HZ   : natural range 0 to c_D_587HZ;
+  signal r_B_494HZ : natural range 0 to c_B_494HZ;
+  signal r_C_523HZ : natural range 0 to c_C_523HZ;
+  signal r_D_587HZ : natural range 0 to c_D_587HZ;
    
   -- These signals will toggle at the frequencies needed:
   signal r_TOGGLE_A_440HZ : std_logic := '0';
-  signal r_TOGGLE_B_494HZ  : std_logic := '0';
-  signal r_TOGGLE_C_523HZ  : std_logic := '0';
-  signal r_TOGGLE_D_587HZ   : std_logic := '0';
+  signal r_TOGGLE_B_494HZ : std_logic := '0';
+  signal r_TOGGLE_C_523HZ : std_logic := '0';
+  signal r_TOGGLE_D_587HZ : std_logic := '0';
  
   -- One bit select wire.
   signal w_LED_SELECT : std_logic;
