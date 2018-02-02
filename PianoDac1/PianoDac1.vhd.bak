@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity Piano2 is 
+	port (
+		i_clock : in std_logic;
+		
+		i_tecla_A   : in std_logic;
+		i_tecla_A_s : in std_logic;
+		i_tecla_B   : in std_logic;
+		i_tecla_C   : in std_logic;
+		i_tecla_C_s : in std_logic;
+		i_tecla_D   : in std_logic;
+		i_tecla_D_s : in std_logic;
+		i_tecla_E   : in std_logic;
+		i_tecla_F   : in std_logic;
+		i_tecla_F_s : in std_logic;
+		i_tecla_G   : in std_logic;
+		i_tecla_G_s : in std_logic;
+		
+		o_audio : out std_logic_vector(3 downto 0);
+		);
+end Piano2;
+
+
+architecture Piano2 of Piano2 is
+
+
+
+
+
+
