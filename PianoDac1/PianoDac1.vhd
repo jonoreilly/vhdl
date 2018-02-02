@@ -20,7 +20,7 @@ entity PianoDac1 is
 		i_tecla_G   : in std_logic;
 		i_tecla_G_s : in std_logic;
 		
-		o_audio : out std_logic_vector (3 downto 0);
+		o_audio : out std_logic_vector (3 downto 0)
 		);
 end PianoDac1;
 
@@ -91,27 +91,57 @@ begin
 	p_A : process (i_clock) is
 	begin
 	
-	 if rising_edge(i_clock) then
+	
+	 if rising_edge(i_clock) and r_value_A = c_freq_A then
+		r_value_A <= 0;
 	 
-		if r_vector_A = '110' and r_rise_A = '0' then
-			r_rise_A = '1';
-		elsif r_vector_A = '001' and r_rise_A = '1' then
-			r_rise_A = '0';
+		if r_vector_A = "110" and r_rise_A = '0' then
+			r_rise_A <= '1';
+			
+		elsif r_vector_A = "001" and r_rise_A = '1' then
+			r_rise_A <= '0';
+			
 		end if;
-	 
-		if r_vector_A() =
 		
-		if r_value_A = 0 then
-		  r_rise_A <= '0';
-		  r_toggle_A <= '0';
-		end if;
 		
 		if r_rise_A = '0' then
-		  r_value_A <= r_value_A + 1;
-		else
-			r_value_A <= r_value_A -1;
-		end if;
 		
+			if r_vector_A(0) = '0' then
+				r_vector_A(0) <= '1';
+				
+			else
+				r_vector_A(0) <= '0';
+				
+				if r_vector_A(1) = '0' then
+					r_vector_A(1) <= '1';
+					
+				else
+					r_vector_A(1) <= '0';
+					r_vector_A(2) <= '1';
+					
+				end if;
+			end if;
+		else
+		
+			if r_vector_A(0) = '1' then
+				r_vector_A(0) <= '0';
+				
+			else
+				r_vector_A(0) <= '1';
+				
+				if r_vector_A(1) = '1' then
+					r_vector_A(1) <= '0';
+					
+				else
+					r_vector_A(1) <= '1';
+					r_vector_A(2) <= '0';
+					
+				end if;
+			end if;
+		end if;
+	 else
+		r_value_A <= r_value_A + 1;
+	 
 	 end if;
 	 
 	end process p_A;

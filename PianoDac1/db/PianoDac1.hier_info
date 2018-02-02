@@ -1,0 +1,20 @@
+|PianoDac1
+i_clock => ~NO_FANOUT~
+i_tecla_A => ~NO_FANOUT~
+i_tecla_A_s => ~NO_FANOUT~
+i_tecla_B => ~NO_FANOUT~
+i_tecla_C => ~NO_FANOUT~
+i_tecla_C_s => ~NO_FANOUT~
+i_tecla_D => ~NO_FANOUT~
+i_tecla_D_s => ~NO_FANOUT~
+i_tecla_E => ~NO_FANOUT~
+i_tecla_F => ~NO_FANOUT~
+i_tecla_F_s => ~NO_FANOUT~
+i_tecla_G => ~NO_FANOUT~
+i_tecla_G_s => ~NO_FANOUT~
+o_audio[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+o_audio[1] <= o_audio[1].DB_MAX_OUTPUT_PORT_TYPE
+o_audio[2] <= o_audio[2].DB_MAX_OUTPUT_PORT_TYPE
+o_audio[3] <= o_audio[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
