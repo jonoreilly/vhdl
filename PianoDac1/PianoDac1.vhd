@@ -28,7 +28,7 @@ end PianoDac1;
 
 architecture PianoDac1 of PianoDac1 is
 
-
+	--50Mhz clock / frequencie of the note / 2 for rising and falling time / 8 for each value of 3 bits
 	constant c_freq_A   : natural := 7102;
 	constant c_freq_A_s : natural := 6704;
 	constant c_freq_B   : natural := 6327;
@@ -42,7 +42,7 @@ architecture PianoDac1 of PianoDac1 is
 	constant c_freq_G   : natural := 3986;
 	constant c_freq_G_s : natural := 3762;
 	
-	
+	-- step counters
 	signal r_value_A   : natural range 0 to c_freq_A  ;
 	signal r_value_A_s : natural range 0 to c_freq_A_s;
 	signal r_value_B   : natural range 0 to c_freq_B  ;
@@ -56,7 +56,8 @@ architecture PianoDac1 of PianoDac1 is
 	signal r_value_G   : natural range 0 to c_freq_G  ;
 	signal r_value_G_s : natural range 0 to c_freq_G_s;
 	
-
+	
+	-- 0 for value rising, 1 for value falling
 	signal r_rise_A   : std_logic := '0';
 	signal r_rise_A_s : std_logic := '0';
 	signal r_rise_B   : std_logic := '0';
@@ -71,6 +72,7 @@ architecture PianoDac1 of PianoDac1 is
 	signal r_rise_G_s : std_logic := '0';
 
 
+	-- digital result value for each note
 	signal r_vector_A   : std_logic_vector (2 downto 0) := "000";
 	signal r_vector_A_s : std_logic_vector (2 downto 0) := "000";
 	signal r_vector_B   : std_logic_vector (2 downto 0) := "000";
@@ -95,17 +97,18 @@ begin
 	 if rising_edge(i_clock) then
 	
 		if r_value_A = c_freq_A-1 then
-			r_value_A <= 0;
+			r_value_A <= 0; -- restart counter
 		 
-			if r_vector_A = "110" and r_rise_A = '0' then
+			if r_vector_A = "110" and r_rise_A = '0' then -- if next step is the max set to decrease for next cycle
 				r_rise_A <= '1';
 				
-			elsif r_vector_A = "001" and r_rise_A = '1' then
+			elsif r_vector_A = "001" and r_rise_A = '1' then -- if next step is the min set to increase next cycle
 				r_rise_A <= '0';
 				
 			end if;
 			
 			
+			-- Vector increase or decrease
 			if r_rise_A = '0' then
 			
 				if r_vector_A(0) = '0' then
@@ -869,6 +872,7 @@ begin
 	
 	
 	
+	-- set output vector to the selected note (signal mixing is still in development, for the moment play one note only)
 	
 	o_audio(0) <=  (r_vector_A  (0) and i_tecla_A  ) or
 						(r_vector_A_s(0) and i_tecla_A_s) or
